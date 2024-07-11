@@ -1,0 +1,37 @@
+.header {
+    background: #2B2B2B;
+    height: 8vh;
+}
+
+.headerCol, .inputCol, .buttonCol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+}
+
+.title {
+    font-size: 32px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+}
+
+.content {
+    background: #2B2B2B;
+}
+
+.autocomplete {
+    width: 480px;
+    border: 1px solid #2B2B2B;
+    margin-top: 24px;
+}
+
+.getRecipeBtn, .getRecipeBtn:hover {
+    background: #F8D57E !important;
+    border: 1px solid #F8D57E !important;
+}
+
+.getRecipeBtn span {
+    color: #2B2B2B;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
