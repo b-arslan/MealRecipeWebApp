@@ -25,6 +25,7 @@ export default function App() {
         } else {
             setOptions([]);
             setNotFound(false);
+            setSelectedMeal(null);
         }
     };
 
@@ -42,13 +43,11 @@ export default function App() {
     };
 
     return (
-        <Layout>
+        <Layout className={styles.layout}>
             <Header className={styles.header}>
-                <Row>
-                    <Col span={24} className={styles.headerCol}>
-                        <h1 className={styles.title}>Meal Recipe App</h1>
-                    </Col>
-                </Row>
+
+                <h1 className={styles.title}>Meal Recipe App</h1>
+
             </Header>
 
             <Content className={styles.content}>
@@ -89,16 +88,26 @@ export default function App() {
                         <Col span={24} className={styles.mealDetailsCol}>
                             <Card className={styles.recipeCard}>
                                 <Row gutter={16}>
-                                    <Col span={12}>
+                                    <Col span={12} style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center'
+                                    }}>
                                         <img
                                             alt={mealDetails.name}
                                             src={mealDetails.image}
-                                            style={{ width: 300, height: 300, objectFit: 'cover' }}
+                                            style={{ width: 330, height: 330, objectFit: 'cover', border: '2px solid #fff', borderRadius: '36px' }}
                                         />
                                     </Col>
-                                    <Col span={12}>
-                                        <h2>{mealDetails.name}</h2>
-                                        <p>{mealDetails.instructions}</p>
+                                    <Col span={12} style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        flexDirection: 'column',
+                                        gap: '3rem'
+                                    }}>
+                                        <h2 style={{color: '#ffff'}}>{mealDetails.name}</h2>
+                                        <p style={{color: '#ffff'}}>{mealDetails.instructions}</p>
                                     </Col>
                                 </Row>
                             </Card>

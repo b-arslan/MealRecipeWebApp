@@ -1,9 +1,13 @@
+.layout {
+    height: 100vh;
+}
+
 .header {
     background: #2B2B2B;
     height: 8vh;
 }
 
-.headerCol, .inputCol, .buttonCol, .footer {
+.header, .inputCol, .buttonCol, .footer {
     display: flex;
     align-items: center;
     justify-content: center;
