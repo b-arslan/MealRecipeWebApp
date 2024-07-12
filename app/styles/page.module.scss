@@ -3,7 +3,7 @@
     height: 8vh;
 }
 
-.headerCol, .inputCol, .buttonCol {
+.headerCol, .inputCol, .buttonCol, .footer {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,7 +16,7 @@
     font-weight: 700;
 }
 
-.content {
+.content, .footer, .cardRow, .mealDetailsCol, .recipeCard {
     background: #2B2B2B;
 }
 
@@ -34,4 +34,30 @@
 .getRecipeBtn span {
     color: #2B2B2B;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 6vh;
+}
+
+.footerText {
+    color: #ffffff;
+    text-decoration: underline;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.content {
+    height: 86vh;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+}
+
+.recipeCard {
+    border: 1px solid #2B2B2B;
 }

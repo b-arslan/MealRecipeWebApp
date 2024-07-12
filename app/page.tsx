@@ -65,9 +65,9 @@ export default function App() {
                 </Row>
 
                 {mealDetails && (
-                    <Row>
+                    <Row className={styles.cardRow}>
                         <Col span={24} className={styles.mealDetailsCol}>
-                            <Card>
+                            <Card className={styles.recipeCard}>
                                 <Row gutter={16}>
                                     <Col span={12}>
                                         <img
@@ -86,6 +86,14 @@ export default function App() {
                     </Row>
                 )}
             </Content>
+
+            <Footer className={styles.footer}>
+                <Row>
+                    <Col>
+                        <h2 className={styles.footerText} onClick={() => {window.open('https://github.com/b-arslan/MealRecipeWebApp')}}>Get the code</h2>
+                    </Col>
+                </Row>
+            </Footer>
         </Layout>
     );
 }
