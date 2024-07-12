@@ -14,6 +14,7 @@
     font-size: 32px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 700;
+    color: #ffffff;
 }
 
 .content, .footer, .cardRow, .mealDetailsCol, .recipeCard {
@@ -60,4 +61,17 @@
 
 .recipeCard {
     border: 1px solid #2B2B2B;
+}
+
+.loadingRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+  
+.loadingCol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

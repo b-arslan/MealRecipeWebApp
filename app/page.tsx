@@ -1,7 +1,8 @@
 'use client'
 import { useState } from 'react';
 import styles from './styles/page.module.scss';
-import { Layout, Row, Col, AutoComplete, Input, Button, Card } from 'antd';
+import { Layout, Row, Col, AutoComplete, Input, Button, Card, Spin } from 'antd';
+import { LoadingOutlined } from '@ant-design/icons';
 import { fetchMeals } from './api/getMeals';
 import { fetchMealDetails } from './api/getMealDetails';
 
@@ -12,8 +13,11 @@ export default function App() {
     const [notFound, setNotFound] = useState(false);
     const [selectedMeal, setSelectedMeal] = useState<string | null>(null);
     const [mealDetails, setMealDetails] = useState<{ name: string, instructions: string, image: string } | null>(null);
+    const [loading, setLoading] = useState(false);
+    const [inputValue, setInputValue] = useState('');
 
     const handleSearch = async (value: string) => {
+        setInputValue(value);
         if (value.length >= 2) {
             const meals = await fetchMeals(value);
             setOptions(meals);
@@ -30,8 +34,10 @@ export default function App() {
 
     const handleGetRecipe = async () => {
         if (selectedMeal) {
+            setLoading(true);
             const details = await fetchMealDetails(selectedMeal);
             setMealDetails(details);
+            setLoading(false);
         }
     };
 
@@ -60,11 +66,25 @@ export default function App() {
                     </Col>
 
                     <Col span={24} className={styles.buttonCol}>
-                        <Button className={styles.getRecipeBtn} onClick={handleGetRecipe}>Get Recipe</Button>
+                        <Button
+                            className={styles.getRecipeBtn}
+                            onClick={handleGetRecipe}
+                            disabled={!selectedMeal}
+                        >
+                            Get Recipe
+                        </Button>
                     </Col>
                 </Row>
 
-                {mealDetails && (
+                {loading && (
+                    <Row className={styles.loadingRow}>
+                        <Col span={24} className={styles.loadingCol}>
+                            <Spin indicator={<LoadingOutlined spin style={{ fontSize: '64px', color: '#fff' }} />} size="large" />
+                        </Col>
+                    </Row>
+                )}
+
+                {!loading && mealDetails && (
                     <Row className={styles.cardRow}>
                         <Col span={24} className={styles.mealDetailsCol}>
                             <Card className={styles.recipeCard}>
@@ -90,7 +110,7 @@ export default function App() {
             <Footer className={styles.footer}>
                 <Row>
                     <Col>
-                        <h2 className={styles.footerText} onClick={() => {window.open('https://github.com/b-arslan/MealRecipeWebApp')}}>Get the code</h2>
+                        <h2 className={styles.footerText} onClick={() => { window.open('https://github.com/b-arslan/MealRecipeWebApp') }}>Get the code</h2>
                     </Col>
                 </Row>
             </Footer>
