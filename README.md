@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Meal Recipe App
 
-First, run the development server:
+This is a simple web application to search for meal recipes and display their details using the Ant Design library for layout and UI components. The app uses an autocomplete feature to search for meals and fetches detailed recipes when a meal is selected.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Search for meals using an autocomplete input.
+- Fetch and display meal details including name, instructions, and an image.
+- Responsive layout using Ant Design components.
+- Loading spinner while fetching meal details.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- `pages`: Contains the main page component (`App`).
+- `styles`: Contains SCSS files for styling.
+- `api`: Contains functions to fetch meal data from an API.
 
-## Learn More
+## Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/b-arslan/MealRecipeWebApp.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd MealRecipeWebApp
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+5. Open your browser and go to `http://localhost:3000`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Usage
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Type a meal name into the autocomplete input. The app will fetch and display matching meal options.
+2. Select a meal from the list.
+3. Click the "Get Recipe" button to fetch and display the meal's details including an image and cooking instructions.
 
-## Deploy on Vercel
+## Acknowledgements
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Ant Design](https://ant.design/) for the UI components.
+- [TheMealDB](https://www.themealdb.com/) for the meal data API.
